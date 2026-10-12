@@ -1,0 +1,17 @@
+version: v2
+
+clean: true
+
+managed:
+  enabled: true
+
+inputs:
+  - module: buf.build/grpc/grpc:26635376b3f47a11126a0f4b4b5b6de7fe5a074a
+    types:
+      - grpc.health.v1.Health
+
+plugins:
+  - local: protoc-gen-py
+    out: src/grpchealth/_gen
+  - local: protoc-gen-connectrpc
+    out: src/grpchealth/_gen

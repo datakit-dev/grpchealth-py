@@ -46,10 +46,12 @@ the recommended way to serve `app` above:
 import asyncio
 import pyvoy
 
+
 async def main() -> None:
     server = pyvoy.PyvoyServer("myapp:app", port=8080)
     await server.start()
     await server.wait()
+
 
 asyncio.run(main())
 ```
@@ -75,10 +77,14 @@ from grpchealth.client import Client
 
 async def main() -> None:
     async with Client("http://localhost:8080") as client:
-        response = await client.check(CheckRequest(service="acme.greet.v1.GreetService"))
+        response = await client.check(
+            CheckRequest(service="acme.greet.v1.GreetService")
+        )
         print(response.status)
 
-        async for response in client.watch(CheckRequest(service="acme.greet.v1.GreetService")):
+        async for response in client.watch(
+            CheckRequest(service="acme.greet.v1.GreetService")
+        ):
             print(response.status)
 
 

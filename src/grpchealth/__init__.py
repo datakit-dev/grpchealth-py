@@ -1,9 +1,9 @@
 """An idiomatic Python implementation of gRPC Service Health, compatible with ConnectRPC."""
 
 from grpchealth.checker import (
+    Checker,
     CheckRequest,
     CheckResponse,
-    Checker,
     StaticChecker,
     Status,
     Watcher,

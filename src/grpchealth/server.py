@@ -16,7 +16,7 @@ from connectrpc.server import DEFAULT_READ_MAX_BYTES, ConnectASGIApplication
 
 from grpchealth._gen.grpc.health.v1 import health_connect as _health_connect
 from grpchealth._gen.grpc.health.v1 import health_pb as _health_pb
-from grpchealth.checker import CheckRequest, Checker, Watcher
+from grpchealth.checker import Checker, CheckRequest, Watcher
 
 if TYPE_CHECKING:
     from collections.abc import AsyncIterator, Iterable
